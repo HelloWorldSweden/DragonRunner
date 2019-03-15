@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b000e82e10729541bcd0514d66726cc, type: 3}
+  m_Name: PlayerDatabase
+  m_EditorClassIdentifier: 
+  maxSpeed: 11.5
+  directionDelta: 15
+  accelerationTime: 0.35
+  decelerationTime: 0.1
+  turnAccelerationTime: 0.1
+  turnDecelerationTime: 0.05
+  deceleration: 20
+  initialJumpSpeed: 17.6
+  frameDelay: 0.18
+  jumpHoldTime: 0.7
+  jumpReleasePercentage: 0.8
+  jumpHoldSpeed: 1
+  jumpHoldDecay: 80
+  gravity: 1.58
+  groundCheckDistance: 1.6
+  terminalVelocity: 50
+  airControlAcceleration: 0.86
+  airControlDeceleration: 1.83
+  passiveAirDeceleration: 1.61
+  minPercentOfAirControl: 0.4
+  airDotForDeceleration: 0.17
+  rotationSpeed: 10
+  atJumpRotationTime: 0.1
+  atJumpRotationSpeed: 10
+  airborneRotationSpeed: 5
+  prettyColorDistance: 1.67
+  prettyColor: {r: 1, g: 0, b: 1, a: 1}
+  prettyColorTime: 2.04
