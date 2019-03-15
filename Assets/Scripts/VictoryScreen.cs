@@ -45,14 +45,8 @@ public class VictoryScreen : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-	public static void Show()
-	{
-		FindObjectOfType<VictoryScreen>().gameObject.SetActive(true);
-		
-		// Sätt igång partiklar, om det finns
-		foreach (var go in GameObject.FindGameObjectsWithTag("WinnerCoin"))
-			foreach (var ps in go.GetComponentsInChildren<ParticleSystem>())
-				ps.Play();
+	public void Show(){
+       gameObject.SetActive(true);
 	}
 
 }
