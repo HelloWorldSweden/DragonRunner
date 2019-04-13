@@ -7,15 +7,15 @@ using UnityEngine.UI;
 
 public class ScreenInfo : MonoBehaviour {
 
-    [Header("Player Scripts")]
-    //Dessa två håller reda på vilka objet som ska stå på skärmen. 
-    [HideInInspector] public PlayerHealth health;
-    [HideInInspector] public PlayerBag bag;   
+	[Header("Player Scripts")]
+	//Dessa två håller reda på vilka objekt som ska stå på skärmen. 
+	[HideInInspector] public PlayerHealth health;
+	[HideInInspector] public PlayerBag bag;
 
-    [Header("Screen Items")]
-    //Dessa två håller reda på att det ska stå en text på skärmen när spelet startar. 
-    public Text healthText;  
-    public Text coinText;
+	[Header("Screen Items")]
+	//Dessa två håller reda på att det ska stå en text på skärmen när spelet startar.
+	public ScoreDisplay healthText;  
+	public ScoreDisplay coinText;
 
 	void Awake()
 	{
@@ -25,9 +25,8 @@ public class ScreenInfo : MonoBehaviour {
 	}
 
 	void Update () {
-	    healthText.text = "Health: " + health.currentLives;
-
-	    coinText.text = "Coins: " + bag.coinCounter;
-    }
+		healthText.value = health.currentLives;
+		coinText.value = bag.coinCounter;
+	}
 
 }
