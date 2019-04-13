@@ -2,30 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 
 public class CoinFloat : MonoBehaviour {
 
-    public float rotateSpeed = 10;
-    public float floatSpeed = 2;
-    public float floatDist = 0.5f;
+	public float rotateSpeed = 10;
+	public float floatSpeed = 2;
+	[FormerlySerializedAs("floatDist")]
+	public float floatAmplitude = 0.5f;
 
-    private Vector3 startPos;
-    private float floatDirection = 1;
+	private Vector3 startPosition;
 
-    void Start() {
-        startPos = transform.position;
-    }
+	void Start() {
+		startPosition = transform.position;
+	}
 
-	// Update is called once per frame
-	void Update () {
-        transform.localEulerAngles += new Vector3(0, rotateSpeed, rotateSpeed) * Time.deltaTime;
-        transform.position += new Vector3(0, floatSpeed, 0) * Time.deltaTime * floatDirection;
+	void Update ()
+	{
+		float deltaY = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
+		transform.position = new Vector3(startPosition.x, startPosition.y + deltaY, startPosition.z);
 
-        if(Vector3.Distance(startPos, transform.position) > floatDist) {
-            Vector3 temp = transform.position;
-            temp.y = startPos.y + floatDist * floatDirection;
-            transform.position = temp;
-            floatDirection *= -1;
-        }
+		float deltaAngle = rotateSpeed * Time.deltaTime;
+		transform.localEulerAngles += new Vector3(0, deltaAngle, deltaAngle);
 	}
 }
