@@ -4,14 +4,14 @@
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float maxLives = 5;  // Spelarens max-liv innan den dör. Siffran kan ändras i Insektorn. 
-	public float currentLives;  // Hur många liv spelaren har just nu. 
+	public int maxLives = 5;  // Spelarens max-liv innan den dör. Siffran kan ändras i Insektorn. 
+	public int currentLives;  // Hur många liv spelaren har just nu. 
 
 	void Start() {
 		currentLives = maxLives; // När vi startar spelet har spelaren fulliv. Vårt nuvarande liv är alltså vårt maxliv. 
 	}
 
 	void Update () {
-
+		
 	}
 }
